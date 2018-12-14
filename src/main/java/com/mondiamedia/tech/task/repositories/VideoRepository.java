@@ -15,7 +15,6 @@ public interface VideoRepository extends PagingAndSortingRepository<VideoEntity,
 	VideoEntity findByVideoId(String videoId);
 	
 	@Query(value="select * from Videos v INNER JOIN users u ON v.user_id = u.user_id order by v.id desc", nativeQuery=true) 
-	
 	Page<VideoEntity> findAllOrderByIdDesc(Pageable pageableRequestString);
 	
 	Page<VideoEntity> findByUserId(Pageable pageableRequestString, String userId);
